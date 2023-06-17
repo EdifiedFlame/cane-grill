@@ -10,5 +10,7 @@ class ListandoPratos(admin.ModelAdmin):
     list_display_links = [
         'id', 'nome_prato',
     ]
-
+    search_fields = ['nome_prato']
+    list_editable = ['categoria']
+    
 admin.site.register(Prato, ListandoPratos)
