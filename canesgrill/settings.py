@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'churras',
+    'pessoas',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -89,7 +90,7 @@ DATABASES = {
         'PASSWORD': '',
         'HOST':'localhost',
         'PORT':'3306',
-        'options':{
+        'OPTION':{
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         }
     }
@@ -137,6 +138,9 @@ STATICFILES_DIRS = [
     BASE_DIR / 'templates/static',
 ]
 
+# media
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = 'media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
