@@ -18,3 +18,17 @@ def churrasco(request, prato_id):
         'prato' : prato
     }
     return render(request, 'churrasco.html', contexto)
+
+def buscar(request):
+    pratos= Prato.objects.filter(publicado=True).order_by('-date_prato')
+
+    if 'buscar' in request.GET:
+        nome_a_buscar = request.GET['buscar']
+        pratos = pratos.filter(nome_prato__icontains = nome_a_buscar)
+    
+    contexto = {
+        'lista_pratos' : pratos,
+        
+    }    
+    
+    return render(request, 'buscar.html', contexto)

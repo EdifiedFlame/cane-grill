@@ -29,7 +29,7 @@ class Prato(models.Model):
         default=datetime.now, blank=True
     )
     foto_prato = models.ImageField(
-        upload_to='pratos/%Y/%m'
+        upload_to= 'pratos/%Y/%m',
         blank=True
     )
     publicado = models.BooleanField(default=False)
